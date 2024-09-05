@@ -1,2 +1,2 @@
-for i in range(0, 100):
-        print((i), end=", ")
+for i in range(99):
+    print(f"{i} = {hex(i)}")
