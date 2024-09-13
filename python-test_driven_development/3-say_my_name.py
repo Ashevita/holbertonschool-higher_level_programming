@@ -2,6 +2,8 @@
 """
 Module qui contient une fonction pour afficher un nom.
 """
+
+
 def say_my_name(first_name, last_name=""):
     """
     Prints 'My name is <first name> <last name>'
@@ -20,7 +22,6 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
         raise TypeError("last_name must be a string")
-    
     # Handle the case where both names are provided
     if first_name and last_name:
         print(f"My name is {first_name} {last_name}")
