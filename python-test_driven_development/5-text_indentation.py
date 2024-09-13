@@ -18,20 +18,16 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     
-    # Initialize the result variable
     result = ""
-    
-    # Traverse through each character in the text
-    for char in text:
-        # Add the character to the result
+    i = 0
+    while i < len(text):
+        char = text[i]
         result += char
-        # Check if the character is one of the specified characters
         if char in ".?:":
-            # Add two new lines after the character
             result += "\n\n"
-    
+        i += 1
+
     # Remove leading and trailing whitespaces on each line
     result = "\n".join(line.strip() for line in result.splitlines())
-    
-    # Print the final result
+
     print(result)
