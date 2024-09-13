@@ -24,12 +24,14 @@ def text_indentation(text):
         char = text[i]
         result.append(char)
         if char in ".?:":
+            # Add two new lines after the specified characters
             result.append("\n\n")
         i += 1
 
-    # Join the list into a single string and remove leading/trailing spaces
+    # Join the list into a single string
     result_text = ''.join(result)
-    # Remove extra spaces on each line
+    # Remove extra spaces from each line and handle leading/trailing spaces
     cleaned_text = "\n".join(line.strip() for line in result_text.splitlines())
     
-    print(cleaned_text)
+    # Print the cleaned text, ensuring no trailing newline
+    print(cleaned_text, end="")
