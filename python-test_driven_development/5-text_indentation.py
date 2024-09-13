@@ -18,34 +18,19 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    # Initialize a variable to accumulate the result
     result = []
     i = 0
-    length = len(text)
-
-    while i < length:
+    while i < len(text):
         char = text[i]
-
-        # Append the current character to the result
         result.append(char)
-
-        # Check if the character is one of the specified punctuation marks
         if char in ".?:":
-            # Add two new lines
+            # Add two new lines after the specified characters
             result.append("\n\n")
-            # Skip any additional spaces or newlines
-            while i + 1 < length and text[i + 1] in " \n":
-                i += 1
-                if text[i] == "\n":
-                    result.append("\n")
-
         i += 1
 
-    result_text = ''.join(result).strip()
-    cleaned_text = "\n".join(
-        line.strip()
-        for line in result_text.splitlines()
-        if line.strip()
-    )
-    # Print the cleaned text without adding an extra newline at the end
+    # Join the list into a single string
+    result_text = ''.join(result)
+    # Remove extra spaces from each line and handle leading/trailing spaces
+    cleaned_text = "\n".join(line.strip() for line in result_text.splitlines())
+    # Print the cleaned text, ensuring no trailing newline
     print(cleaned_text, end="")
