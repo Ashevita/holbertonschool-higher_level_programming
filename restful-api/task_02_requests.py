@@ -2,7 +2,7 @@
 import requests
 import csv
 
-# Function to fetch and display 
+# Function to fetch and display
 
 
 def fetch_and_print_posts():
