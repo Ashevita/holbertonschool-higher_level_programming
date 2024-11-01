@@ -12,10 +12,10 @@ from model_city import City
 if __name__ == "__main__":
     # Get MySQL username, password, and database name from arguments
     user, pwd, db = argv[1], argv[2], argv[3]
-    
+
     # Connect to MySQL database on localhost at port 3306
     engine = create_engine(
-        f'mysql+mysqldb://{user}:{pwd}@localhost:3306/{db}', 
+        f'mysql+mysqldb://{user}:{pwd}@localhost:3306/{db}',
         pool_pre_ping=True
     )
     Session = sessionmaker(bind=engine)
